@@ -7,17 +7,12 @@
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <script src="{{ url_for('static', filename='scripts.js') }}" defer></script>
 </head>
-<body class="bg-gray-100 dark:bg-gray-800 p-6 transition duration-300">
-    <h1 class="text-3xl text-center text-gray-800 dark:text-gray-200 mb-6">Gemini Chatbot</h1>
-    <div class="flex justify-between mb-4">
-        <button id="theme-toggle" class="bg-gray-300 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded-lg px-4 py-2">
-            Toggle Dark Mode
-        </button>
-    </div>
-    <div id="chat-container" class="max-w-2xl mx-auto bg-white dark:bg-gray-900 rounded-lg shadow-lg p-4">
-        <div id="chat-log" class="h-96 overflow-y-scroll border border-gray-300 dark:border-gray-600 rounded-lg p-2 mb-4"></div>
+<body class="bg-gray-100 p-6 transition duration-300">
+    <h1 class="text-3xl text-center text-gray-800 mb-6">Gemini Chatbot</h1>
+    <div id="chat-container" class="max-w-2xl mx-auto bg-white rounded-lg shadow-lg p-4">
+        <div id="chat-log" class="h-96 overflow-y-scroll border border-gray-300 rounded-lg p-2 mb-4"></div>
         <div class="flex">
-            <input type="text" id="user-input" placeholder="Type your message here..." class="flex-1 border border-gray-300 dark:border-gray-600 rounded-lg p-2 mr-2 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400">
+            <input type="text" id="user-input" placeholder="Type your message here..." class="flex-1 border border-gray-300 rounded-lg p-2 mr-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
             <button onclick="sendMessage()" class="bg-blue-500 text-white rounded-lg px-4 py-2 hover:bg-blue-600">Send</button>
         </div>
     </div>
