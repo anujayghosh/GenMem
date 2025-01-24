@@ -3,3 +3,9 @@ google-generativeai
 redis
 python-dotenv
 requests
+langchain
+pinecone-client
+langchain-pinecone
+langchain-google-genai
+"pinecone[grpc]"
+supabase
