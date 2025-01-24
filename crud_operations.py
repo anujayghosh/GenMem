@@ -3,11 +3,13 @@ import redis
 import pinecone
 from supabase import create_client, Client
 import google.generativeai as genai
+from datetime import datetime
 
 # Load environment variables
 from dotenv import load_dotenv
 load_dotenv()
 
+genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
 # Initialize Redis
 redis_client = redis.StrictRedis(host='localhost', port=9000, db=0, decode_responses=True)
 
@@ -62,7 +64,14 @@ class CRUDOperations:
     # Supabase Operations
     def supabase_insert_fact(self, user_id, fact):
         """Insert a fact into the Supabase database."""
-        self.supabase_client.table("semanticmem").insert({"user_id": user_id, "fact": fact}).execute()
+        current_time = str(datetime.now())
+        factvector = genai.embed_content(model="models/text-embedding-004", content=fact)['embedding']
+        self.supabase_client.table("semanticmem").insert({
+            "user_id": user_id,
+            "created_at": current_time,
+            "fact": fact,
+            "fact_vector": factvector
+        }).execute()
 
     def supabase_get_facts(self, user_id):
         """Get all facts for a specific user ID from Supabase."""

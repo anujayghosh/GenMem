@@ -6,6 +6,7 @@ import pinecone
 import google.generativeai as genai
 from datetime import datetime
 from supabase import create_client, Client  # Import Supabase client
+from crud_operations import CRUDOperations
 
 load_dotenv()
 
@@ -15,6 +16,7 @@ key = os.getenv("SUPABASE_KEY")  # Your Supabase API key
 supabase: Client = create_client(url, key)
 
 genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
+crud = CRUDOperations()
 
 # Initialize Redis
 redis_client = redis.StrictRedis(host='localhost', port=9000, db=0, decode_responses=True)
@@ -67,9 +69,10 @@ def summarize_and_ingest(user_id):
 
         # Insert facts into Supabase
         for fact in facts_list:
-            factvector = genai.embed_content(model="models/text-embedding-004", content=fact)['embedding']
+            crud.supabase_insert_fact(user_id, fact)
+            # factvector = genai.embed_content(model="models/text-embedding-004", content=fact)['embedding']
             # factv= "".join(factvector.numpy().tolist()[0])
-            supabase.table("semanticmem").insert({"user_id": user_id, "created_at": current_time, "fact": fact, "fact_vector": factvector}).execute()  # Insert each fact into the database
+            # supabase.table("semanticmem").insert({"user_id": user_id, "created_at": current_time, "fact": fact, "fact_vector": factvector}).execute()  # Insert each fact into the database
 
 def ingest_data():
     # Retrieve all user IDs from Redis (or specify a user ID)
