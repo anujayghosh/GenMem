@@ -23,20 +23,22 @@ This project implements a chatbot system that can handle both informational quer
 - **Data Storage**: User data, facts, and embeddings are stored in Redis, Pinecone, and Supabase as needed.
 
 ## Project Structure
+
 /project-root
 │
-├── app.py # Main Flask application
-├── action_agent.py # Handles action commands
-├── crud_operations.py # CRUD operations for Redis, Pinecone, and Supabase
-├── informational_agent.py # Handles informational queries
-├── ingest_data.py # Ingests data into the databases
-├── templates/ # HTML templates for the web interface
-│ └── index.html # Main interface
-├── static/ # Static files (CSS, JS)
-│ ├── styles.css # Custom styles
-│ └── scripts.js # Custom scripts
-├── .env # Environment variables
-└── README.md # Project documentation
+├── app.py                     # Main Flask application
+├── action_agent.py            # Handles action commands
+├── crud_operations.py         # CRUD operations for Redis, Pinecone, and Supabase
+├── informational_agent.py      # Handles informational queries
+├── ingest_data.py             # Ingests data into the databases
+├── templates/                 # HTML templates for the web interface
+│   └── index.html             # Main interface
+├── static/                    # Static files (CSS, JS)
+│   ├── styles.css             # Custom styles
+│   └── scripts.js             # Custom scripts
+├── .env                       # Environment variables
+└── README.md                  # Project documentation
+
 
 ## Requirements
 
