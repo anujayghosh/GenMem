@@ -6,7 +6,7 @@ This project implements a chatbot system that can handle both informational quer
 
 ## System Design and Architecture
 
-![Project structure](./img/SysDes.png)
+![Project structure](./static/img/SysDes.png)
 
 ### Components
 
@@ -26,7 +26,7 @@ This project implements a chatbot system that can handle both informational quer
 
 ## Project Structure
 
-![Project structure](./img/proj_struct.png)
+![Project structure](./static/img/proj_struct.png)
 
 ## Requirements
 
