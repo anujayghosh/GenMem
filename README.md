@@ -6,6 +6,8 @@ This project implements a chatbot system that can handle both informational quer
 
 ## System Design and Architecture
 
+![Project structure](./img/SysDes.png)
+
 ### Components
 
 1. **Flask Web Application**: The main application that handles user interactions and routes requests to the appropriate handlers.
@@ -24,7 +26,7 @@ This project implements a chatbot system that can handle both informational quer
 
 ## Project Structure
 
-![Project structure](image.png)
+![Project structure](./img/proj_struct.png)
 
 ## Requirements
 
