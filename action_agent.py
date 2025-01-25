@@ -28,7 +28,7 @@ def handle_action_command(user_input, user_id):
         facts_response = crud.supabase_get_facts(user_id)
         for fact in facts_response.data:  # Access the data attribute directly
             crud.supabase_delete_fact(fact['id'])
-        return {f'All data for user {user_id} has been forgotten.'}
+        return f'All data for user {user_id} has been forgotten.'
 
     elif action_command == "delete_fact":
         fact_text = parameters.get("fact")
@@ -50,19 +50,19 @@ def handle_action_command(user_input, user_id):
                 # Define a threshold for similarity (e.g., 0.9 for a strong match)
                 if similarity > 0.8:  # Adjust threshold as needed
                     crud.supabase_delete_fact(fact['id'])
-                    return {f'Fact "{fact_text}" has been deleted.'}
+                    return f'Fact "{fact_text}" has been deleted.'
 
-            return {f'No such fact exists.'}
+            return 'No such fact exists.'
 
     elif action_command == "add_fact":
         fact_text = parameters.get("fact")
-        
+
         if fact_text:
             crud.supabase_insert_fact(user_id, fact_text)
-            return {f'This fact has been added. Anything else?'}
+            return f'This fact has been added. Anything else?'
 
     # Add more action commands as needed
-    return {'Action command not recognized.'}
+    return 'Action command not recognized.'
 
 def parse_extraction_response(extraction_response):
     """Parse the response from Gemini to extract action command and parameters."""
