@@ -65,7 +65,7 @@ def summarize_and_ingest(user_id):
         vector = genai.embed_content(model="models/text-embedding-004", content=summarized_content)
 
         # Upsert the vector with user ID as the ID
-        index.upsert([(user_id, vector['embedding'], {'text': summarized_content})])  # Upsert the vector with user ID as the ID
+        crud.pinecone_upsert(user_id, vector['embedding'], {'text': summarized_content}) # Upsert the vector with user ID as the ID
 
         # Insert facts into Supabase
         for fact in facts_list:
