@@ -1,8 +1,7 @@
-# Chatbot System with CRUD Operations
-
+# Elephanta: A Multi-Faceted RAG Chatbot with Advanced Memory Management and CRUD Capabilities
 ## Overview
 
-This project implements a chatbot system that can handle both informational queries and action commands. The chatbot utilizes Google Gemini for natural language processing and integrates with Redis, Pinecone, and Supabase for data storage and retrieval.
+This project implements a chatbot system that handles informational queries and action commands. The chatbot utilizes Google Gemini for natural language processing and integrates with Redis, Pinecone, and Supabase for data storage and retrieval.
 
 ## System Design and Architecture
 
