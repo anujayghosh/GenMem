@@ -1,3 +1,5 @@
+![Elephanta-logo](https://github.com/user-attachments/assets/914dc709-2260-404c-9826-7e4514870a36)
+
 # Elephanta: A Multi-Faceted RAG Chatbot with Advanced Memory Management and CRUD Capabilities
 ## Overview
 
