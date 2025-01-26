@@ -92,6 +92,6 @@ def handle_informational_query(user_input, user_id):
     conversation_history.append({"role": "Bot", "content": response.text})
 
     # Store the updated conversation history back in Redis
-    redis_client.set(user_id, json.dumps(conversation_history))
+    crud.redis_set(user_id, json.dumps(conversation_history))
 
     return response.text
