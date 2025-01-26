@@ -70,7 +70,7 @@ This project implements a chatbot system that handles informational queries and 
 
 ## Running the Project
 
-1. **Ingest Initial Data**:
+1. **Ingest Initial Data (Optional)**:
    Run the `ingest_data.py` script to populate the databases with initial data.
    ```bash
    python ingest_data.py
